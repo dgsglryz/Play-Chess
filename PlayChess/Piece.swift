@@ -1,30 +1,26 @@
 //
 //  Piece.swift
-//  PlayChess
+//  ChessGame
 //
-//  Created by Dogus Guleryuz on 23.03.2023.
+//  Created by Dogus Guleryuz on 03.04.2023.
 //
 
 import Foundation
 
-class Piece: CustomStringConvertible, Equatable {
-  var value: Int
-  var isWhite: Bool
+class Piece {
   
-  init(value: Int, isWhite: Bool) {
-    self.value = value
-    self.isWhite = isWhite
+  let color: Color
+  let symbol: String
+  let type: PieceType
+  
+  init(color: Color, symbol: String, type: PieceType) {
+    self.color = color
+    self.symbol = symbol
+    self.type = type
   }
   
-  var description: String {
-    return "Piece(value='\(value)')"
+  func move(from start: Position, to end: Position, board: Board) -> Bool {
+    return false
   }
   
-  func move() {
-    print("Piece moves")
-  }
-  
-  static func ==(lhs: Piece, rhs: Piece) -> Bool {
-    return lhs.value == rhs.value && lhs.isWhite == rhs.isWhite
-  }
 }
